@@ -6,8 +6,8 @@
 <div>
   <Canvas>
     <T.PerspectiveCamera makeDefault fov={75} aspect={2} near={1.5} far={5} position={[0, 0, 2]} />
-    <StarField count={350} size={0.05} />
-    <StarField count={1500} size={0.075} />
+    <StarField count={350} size={0.02} />
+    <StarField count={1500} size={0.04} />
   </Canvas>
 </div>
 
