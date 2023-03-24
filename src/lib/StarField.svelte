@@ -13,7 +13,7 @@
     color,
     map: useTexture('./sp2.png'),
     size,
-    transparent: true,
+    transparent: true
   })
 
   for (let i = 0; i < particles.length; i++) {
