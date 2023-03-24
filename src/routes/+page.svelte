@@ -1,2 +1,19 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+  import { Canvas, T } from '@threlte/core'
+  import StarField from '$lib/StarField.svelte'
+</script>
+
+<div>
+  <Canvas>
+    <T.PerspectiveCamera makeDefault fov={75} aspect={2} near={1.5} far={5} position={[0, 0, 2]} />
+    <StarField count={350} size={0.05} />
+    <StarField count={1500} size={0.075} />
+  </Canvas>
+</div>
+
+<style>
+  div {
+    height: 100%;
+    width: 100%;
+  }
+</style>
