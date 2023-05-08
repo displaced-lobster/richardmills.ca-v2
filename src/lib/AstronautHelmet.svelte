@@ -63,8 +63,16 @@ Command: npx @threlte/gltf@0.0.5 --transform --root ./static --types --keepnames
       rotation={[-0.070662, 0, 0]}
     />
     <T.Group name="Sphere" position={[0, 0.376172, 0]} rotation={[0.128762, 0, 0]}>
-      <T.Mesh name="Sphere004" geometry={$gltf.nodes.Sphere004.geometry} material={$gltf.materials.Material} />
-      <T.Mesh name="Sphere004_1" geometry={$gltf.nodes.Sphere004_1.geometry} material={$gltf.materials.Metal} />
+      <T.Mesh
+        name="Sphere004"
+        geometry={$gltf.nodes.Sphere004.geometry}
+        material={$gltf.materials.Material}
+      />
+      <T.Mesh
+        name="Sphere004_1"
+        geometry={$gltf.nodes.Sphere004_1.geometry}
+        material={$gltf.materials.Metal}
+      />
     </T.Group>
     <T.Mesh
       name="Helmet-Inner001"
@@ -89,7 +97,11 @@ Command: npx @threlte/gltf@0.0.5 --transform --root ./static --types --keepnames
       scale={[0.06344, 0.022211, 0.06344]}
     />
     <T.Group name="skull" position={[0.000223, 0.300358, 0.064092]}>
-      <T.Mesh name="RetopoFlow088" geometry={$gltf.nodes.RetopoFlow088.geometry} material={$gltf.materials.skull} />
+      <T.Mesh
+        name="RetopoFlow088"
+        geometry={$gltf.nodes.RetopoFlow088.geometry}
+        material={$gltf.materials.skull}
+      />
       <T.Mesh
         name="RetopoFlow088_1"
         geometry={$gltf.nodes.RetopoFlow088_1.geometry}

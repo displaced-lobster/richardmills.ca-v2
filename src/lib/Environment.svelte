@@ -5,9 +5,12 @@
   const loader = useLoader(THREE.CubeTextureLoader, () => new THREE.CubeTextureLoader())
   const { scene } = useThrelte()
 
-  loader.load([ ...Array(6).keys() ].map(i => `/env-${i}.png`), texture => {
-    texture.encoding = THREE.sRGBEncoding
-    scene.background = texture
-    scene.environment = texture
-  })
+  loader.load(
+    [...Array(6).keys()].map((i) => `/env-${i}.png`),
+    (texture) => {
+      texture.encoding = THREE.sRGBEncoding
+      scene.background = texture
+      scene.environment = texture
+    }
+  )
 </script>

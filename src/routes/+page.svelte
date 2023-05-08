@@ -6,7 +6,14 @@
 
 <div>
   <Canvas>
-    <T.PerspectiveCamera makeDefault fov={75} aspect={2} near={0.05} far={15} position={[0, 0.35, 1.2]}>
+    <T.PerspectiveCamera
+      makeDefault
+      fov={75}
+      aspect={2}
+      near={0.05}
+      far={15}
+      position={[0, 0.35, 1.2]}
+    >
       <OrbitControls
         autoRotate
         autoRotateSpeed={0.2}
