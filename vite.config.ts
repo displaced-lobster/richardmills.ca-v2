@@ -3,6 +3,9 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [sveltekit()],
+  server: {
+    host: true
+  },
   ssr: {
     noExternal: ['three', 'troika-three-text']
   }
