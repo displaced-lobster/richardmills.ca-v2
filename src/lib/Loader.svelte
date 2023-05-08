@@ -9,6 +9,7 @@
   progress.subscribe((value) => {
     progressValue = value
   })
+  $: progressWidth = `${progressValue * 100}%`
 
   let finished = get(finishedOnce)
 
@@ -21,9 +22,11 @@
 
 <div class={classes}>
   {#if !finished}
-    <div>
-      <div>Loading...</div>
-      <div>{progressValue}</div>
+    <div class="font-sans text-sky-100 text-xs">
+      <div class="animate-pulse">Loading...</div>
+      <div class="w-80 bg-gray-700 h-2.5">
+        <div class="bg-sky-100 h-2.5" style="width: {progressWidth}" />
+      </div>
     </div>
   {/if}
 </div>
@@ -37,12 +40,12 @@
     height: 100vh;
     width: 100vw;
     background: black;
-    color: aliceblue;
     z-index: 10000;
     transition: opacity 3s ease-in-out;
   }
 
   .loader.finished {
     opacity: 0;
+    pointer-events: none;
   }
 </style>

@@ -3,14 +3,7 @@
   import Loader from '$lib/Loader.svelte'
 </script>
 
-<div>
+<div class="h-full w-full">
   <Loader />
   <Experience />
 </div>
-
-<style>
-  div {
-    height: 100%;
-    width: 100%;
-  }
-</style>

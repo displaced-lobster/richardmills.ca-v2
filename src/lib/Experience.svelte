@@ -4,7 +4,7 @@
   import Environment from '$lib/Environment.svelte'
 </script>
 
-<div>
+<div class="h-full w-full">
   <Canvas>
     <T.PerspectiveCamera
       makeDefault
@@ -30,10 +30,3 @@
     <Environment />
   </Canvas>
 </div>
-
-<style>
-  div {
-    height: 100%;
-    width: 100%;
-  }
-</style>
