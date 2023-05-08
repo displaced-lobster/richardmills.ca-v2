@@ -9,7 +9,8 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
-    "format": "prettier --plugin-search-dir . --write ."
+    "format": "prettier --plugin-search-dir . --write .",
+    "process-model": "npx @threlte/gltf --transform --root ./static --types --keepnames --precision 6"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.0.0",
@@ -25,6 +26,7 @@
     "eslint-plugin-svelte3": "^4.0.0",
     "prettier": "^2.8.0",
     "prettier-plugin-svelte": "^2.8.1",
+    "sharp": "^0.32.1",
     "svelte": "^3.54.0",
     "svelte-check": "^3.0.1",
     "svelte-sequential-preprocessor": "^1.0.0",
