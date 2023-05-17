@@ -2,6 +2,7 @@
   import { Canvas, OrbitControls, T } from '@threlte/core'
   import AstronautHelmet from '$lib/AstronautHelmet.svelte'
   import Environment from '$lib/Environment.svelte'
+  import HelmetInternal from '$lib/HelmetInternal.svelte'
 </script>
 
 <div class="h-full w-full">
@@ -27,6 +28,7 @@
     <T.DirectionalLight position={[-3, 10, -10]} intensity={0.2} />
     <T.AmbientLight intensity={0.2} />
     <AstronautHelmet />
+    <HelmetInternal />
     <Environment />
   </Canvas>
 </div>
