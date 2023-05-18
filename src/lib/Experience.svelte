@@ -17,7 +17,7 @@
     >
       <OrbitControls
         autoRotate
-        autoRotateSpeed={0.2}
+        autoRotateSpeed={0.5}
         enableDamping
         enablePan={false}
         maxDistance={2}

@@ -6,7 +6,7 @@ Command: npx @threlte/gltf@0.0.5 --transform --root ./static --types --keepnames
   import type * as THREE from 'three'
   import { Group } from 'three'
   import { T, Three, type Props, type Events, type Slots } from '@threlte/core'
-  import { useGltf, useGltfAnimations } from '@threlte/extras'
+  import { useGltf } from '@threlte/extras'
 
   type $$Props = Props<THREE.Group>
   type $$Events = Events<THREE.Group>
@@ -14,16 +14,6 @@ Command: npx @threlte/gltf@0.0.5 --transform --root ./static --types --keepnames
 
   export const ref = new Group()
 
-  type ActionName =
-    | 'Visor'
-    | 'Helmet-Inner'
-    | 'Cylinder'
-    | 'Sphere'
-    | 'Helmet-Inner.001'
-    | 'Cylinder.001'
-    | 'Cylinder.002'
-    | 'Cube'
-    | 'Cube.001'
   type GLTFResult = {
     nodes: {
       Visor: THREE.Mesh
@@ -36,90 +26,95 @@ Command: npx @threlte/gltf@0.0.5 --transform --root ./static --types --keepnames
       Cylinder002: THREE.Mesh
       Cube: THREE.Mesh
       Cube001: THREE.Mesh
+      Cylinder003: THREE.Mesh
     }
     materials: {
       Visor: THREE.MeshPhysicalMaterial
       Material: THREE.MeshStandardMaterial
       Metal: THREE.MeshStandardMaterial
       Brass: THREE.MeshStandardMaterial
+      Black: THREE.MeshStandardMaterial
     }
   }
 
   const { gltf } = useGltf<GLTFResult>('./astronaut-helmet-transformed.glb', { useDraco: true })
-  export const { actions, mixer } = useGltfAnimations<ActionName>(gltf, ref)
 </script>
 
 {#if $gltf}
   <Three type={ref} {...$$restProps}>
-    <T.Group name="Scene">
+    <T.Mesh
+      name="Visor"
+      geometry={$gltf.nodes.Visor.geometry}
+      material={$gltf.materials.Visor}
+      position={[0, 0.376172, 0]}
+    />
+    <T.Mesh
+      name="Helmet-Inner"
+      geometry={$gltf.nodes['Helmet-Inner'].geometry}
+      material={$gltf.materials.Material}
+      position={[0, 0.376172, 0]}
+      rotation={[0.49625, 0, 0]}
+    />
+    <T.Mesh
+      name="Cylinder"
+      geometry={$gltf.nodes.Cylinder.geometry}
+      material={$gltf.materials.Metal}
+      position={[0, 0.005558, 0.04802]}
+      rotation={[-0.070662, 0, 0]}
+    />
+    <T.Group name="Sphere" position={[0, 0.376172, 0]} rotation={[0.128762, 0, 0]}>
       <T.Mesh
-        name="Visor"
-        geometry={$gltf.nodes.Visor.geometry}
-        material={$gltf.materials.Visor}
-        position={[0, 0.376172, 0]}
-      />
-      <T.Mesh
-        name="Helmet-Inner"
-        geometry={$gltf.nodes['Helmet-Inner'].geometry}
+        name="Sphere004"
+        geometry={$gltf.nodes.Sphere004.geometry}
         material={$gltf.materials.Material}
-        position={[0, 0.376172, 0]}
-        rotation={[0.49625, 0, 0]}
       />
       <T.Mesh
-        name="Cylinder"
-        geometry={$gltf.nodes.Cylinder.geometry}
+        name="Sphere004_1"
+        geometry={$gltf.nodes.Sphere004_1.geometry}
         material={$gltf.materials.Metal}
-        position={[0, 0.005558, 0.04802]}
-        rotation={[-0.070662, 0, 0]}
-      />
-      <T.Group name="Sphere" position={[0, 0.376172, 0]} rotation={[0.128762, 0, 0]}>
-        <T.Mesh
-          name="Sphere004"
-          geometry={$gltf.nodes.Sphere004.geometry}
-          material={$gltf.materials.Material}
-        />
-        <T.Mesh
-          name="Sphere004_1"
-          geometry={$gltf.nodes.Sphere004_1.geometry}
-          material={$gltf.materials.Metal}
-        />
-      </T.Group>
-      <T.Mesh
-        name="Helmet-Inner001"
-        geometry={$gltf.nodes['Helmet-Inner001'].geometry}
-        material={$gltf.materials.Metal}
-        position={[0, 0.376172, 0]}
-        rotation={[0.49625, 0, 0]}
-      />
-      <T.Mesh
-        name="Cylinder001"
-        geometry={$gltf.nodes.Cylinder001.geometry}
-        material={$gltf.materials.Brass}
-        position={[0.519512, 0.397029, -0.080712]}
-        rotation={[-0.007107, 0.106379, -1.503963]}
-      />
-      <T.Mesh
-        name="Cylinder002"
-        geometry={$gltf.nodes.Cylinder002.geometry}
-        material={$gltf.materials.Brass}
-        position={[0.469201, 0.156996, -0.041707]}
-        rotation={[0, 0.103374, -1.901089]}
-      />
-      <T.Mesh
-        name="Cube"
-        geometry={$gltf.nodes.Cube.geometry}
-        material={$gltf.materials.Material}
-        position={[0.836674, 0.318586, 0.044687]}
-        rotation={[-0.327226, 0, 0]}
-      />
-      <T.Mesh
-        name="Cube001"
-        geometry={$gltf.nodes.Cube001.geometry}
-        material={$gltf.nodes.Cube001.material}
-        position={[0.272551, 0.088361, 0.102818]}
-        rotation={[0, -0.088397, 0]}
       />
     </T.Group>
+    <T.Mesh
+      name="Helmet-Inner001"
+      geometry={$gltf.nodes['Helmet-Inner001'].geometry}
+      material={$gltf.materials.Metal}
+      position={[0, 0.376172, 0]}
+      rotation={[0.49625, 0, 0]}
+    />
+    <T.Mesh
+      name="Cylinder001"
+      geometry={$gltf.nodes.Cylinder001.geometry}
+      material={$gltf.materials.Brass}
+      position={[0.519512, 0.397029, -0.080712]}
+      rotation={[-0.007107, 0.106379, -1.503963]}
+    />
+    <T.Mesh
+      name="Cylinder002"
+      geometry={$gltf.nodes.Cylinder002.geometry}
+      material={$gltf.materials.Brass}
+      position={[0.469201, 0.156996, -0.041707]}
+      rotation={[0, 0.103374, -1.901089]}
+    />
+    <T.Mesh
+      name="Cube"
+      geometry={$gltf.nodes.Cube.geometry}
+      material={$gltf.materials.Material}
+      position={[0.836674, 0.318586, 0.044687]}
+      rotation={[-0.327226, 0, 0]}
+    />
+    <T.Mesh
+      name="Cube001"
+      geometry={$gltf.nodes.Cube001.geometry}
+      material={$gltf.nodes.Cube001.material}
+      position={[0.272551, 0.088361, 0.102818]}
+      rotation={[0, -0.088397, 0]}
+    />
+    <T.Mesh
+      name="Cylinder003"
+      geometry={$gltf.nodes.Cylinder003.geometry}
+      material={$gltf.materials.Black}
+      position={[0, 0.005558, 0.04802]}
+    />
 
     <slot {ref} />
   </Three>
