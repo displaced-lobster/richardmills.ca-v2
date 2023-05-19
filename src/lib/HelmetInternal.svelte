@@ -2,9 +2,14 @@
   import { get } from 'svelte/store'
   import { useFrame } from '@threlte/core'
   import Blackout from '$lib/Blackout.svelte'
+  import Mushroom from '$lib/Mushrooms.svelte'
   import Skull from '$lib/Skull.svelte'
 
-  const options = [{ component: Blackout }, { component: Skull }]
+  const options = [
+    { component: Blackout },
+    { component: Skull },
+    { component: Mushroom },
+  ]
   let currentIndex = 0
   let readyToChange = true
 
