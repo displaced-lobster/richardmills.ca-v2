@@ -28,7 +28,11 @@ Command: npx @threlte/gltf@0.0.5 --transform --root ./static --types --keepnames
 
 {#if $gltf}
   <Three type={ref} {...$$restProps}>
-    <T.Mesh name="Mushroom_" geometry={$gltf.nodes.Mushroom_.geometry} material={$gltf.materials.Mushroom} />
+    <T.Mesh
+      name="Mushroom_"
+      geometry={$gltf.nodes.Mushroom_.geometry}
+      material={$gltf.materials.Mushroom}
+    />
 
     <slot {ref} />
   </Three>

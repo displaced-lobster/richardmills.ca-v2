@@ -63,8 +63,16 @@ Command: npx @threlte/gltf@0.0.5 --transform --root ./static --types --keepnames
       rotation={[-0.070662, 0, 0]}
     />
     <T.Group name="Sphere" position={[0, 0.376172, 0]} rotation={[0.128762, 0, 0]}>
-      <T.Mesh name="Sphere004" geometry={$gltf.nodes.Sphere004.geometry} material={$gltf.materials.Material} />
-      <T.Mesh name="Sphere004_1" geometry={$gltf.nodes.Sphere004_1.geometry} material={$gltf.materials.Metal} />
+      <T.Mesh
+        name="Sphere004"
+        geometry={$gltf.nodes.Sphere004.geometry}
+        material={$gltf.materials.Material}
+      />
+      <T.Mesh
+        name="Sphere004_1"
+        geometry={$gltf.nodes.Sphere004_1.geometry}
+        material={$gltf.materials.Metal}
+      />
     </T.Group>
     <T.Mesh
       name="Helmet-Inner001"

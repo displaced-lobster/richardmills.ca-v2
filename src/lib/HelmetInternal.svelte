@@ -5,11 +5,7 @@
   import Mushroom from '$lib/Mushrooms.svelte'
   import Skull from '$lib/Skull.svelte'
 
-  const options = [
-    { component: Blackout },
-    { component: Skull },
-    { component: Mushroom },
-  ]
+  const options = [{ component: Blackout }, { component: Skull }, { component: Mushroom }]
   let currentIndex = 0
   let readyToChange = true
 
