@@ -16,23 +16,20 @@ Command: npx @threlte/gltf@0.0.5 --transform --root ./static --types --keepnames
 
   type GLTFResult = {
     nodes: {
-      Visor: THREE.Mesh
-      ['Helmet-Inner']: THREE.Mesh
-      Cylinder: THREE.Mesh
-      Sphere004: THREE.Mesh
-      Sphere004_1: THREE.Mesh
-      ['Helmet-Inner001']: THREE.Mesh
-      Cylinder001: THREE.Mesh
-      Cylinder002: THREE.Mesh
-      Cube: THREE.Mesh
-      Cube001: THREE.Mesh
-      Cylinder003: THREE.Mesh
+      Visor001: THREE.Mesh
+      Helmet_001: THREE.Mesh
+      Attachment001: THREE.Mesh
+      Port001: THREE.Mesh
+      ['Accessory_-_side001']: THREE.Mesh
+      Accessory001: THREE.Mesh
+      Partition001: THREE.Mesh
+      ['Helmet_-_metal001']: THREE.Mesh
+      Coupling001: THREE.Mesh
     }
     materials: {
       Visor: THREE.MeshPhysicalMaterial
       Material: THREE.MeshStandardMaterial
-      Metal: THREE.MeshStandardMaterial
-      Brass: THREE.MeshStandardMaterial
+      ['Metal.001']: THREE.MeshStandardMaterial
       Black: THREE.MeshStandardMaterial
     }
   }
@@ -43,77 +40,65 @@ Command: npx @threlte/gltf@0.0.5 --transform --root ./static --types --keepnames
 {#if $gltf}
   <Three type={ref} {...$$restProps}>
     <T.Mesh
-      name="Visor"
-      geometry={$gltf.nodes.Visor.geometry}
+      name="Visor001"
+      geometry={$gltf.nodes.Visor001.geometry}
       material={$gltf.materials.Visor}
       position={[0, 0.376172, 0]}
     />
     <T.Mesh
-      name="Helmet-Inner"
-      geometry={$gltf.nodes['Helmet-Inner'].geometry}
+      name="Helmet_001"
+      geometry={$gltf.nodes.Helmet_001.geometry}
       material={$gltf.materials.Material}
       position={[0, 0.376172, 0]}
-      rotation={[0.49625, 0, 0]}
+      rotation={[0.128762, 0, 0]}
     />
     <T.Mesh
-      name="Cylinder"
-      geometry={$gltf.nodes.Cylinder.geometry}
-      material={$gltf.materials.Metal}
-      position={[0, 0.005558, 0.04802]}
-      rotation={[-0.070662, 0, 0]}
-    />
-    <T.Group name="Sphere" position={[0, 0.376172, 0]} rotation={[0.128762, 0, 0]}>
-      <T.Mesh
-        name="Sphere004"
-        geometry={$gltf.nodes.Sphere004.geometry}
-        material={$gltf.materials.Material}
-      />
-      <T.Mesh
-        name="Sphere004_1"
-        geometry={$gltf.nodes.Sphere004_1.geometry}
-        material={$gltf.materials.Metal}
-      />
-    </T.Group>
-    <T.Mesh
-      name="Helmet-Inner001"
-      geometry={$gltf.nodes['Helmet-Inner001'].geometry}
-      material={$gltf.materials.Metal}
-      position={[0, 0.376172, 0]}
-      rotation={[0.49625, 0, 0]}
-    />
-    <T.Mesh
-      name="Cylinder001"
-      geometry={$gltf.nodes.Cylinder001.geometry}
-      material={$gltf.materials.Brass}
+      name="Attachment001"
+      geometry={$gltf.nodes.Attachment001.geometry}
+      material={$gltf.materials['Metal.001']}
       position={[0.519512, 0.397029, -0.080712]}
       rotation={[-0.007107, 0.106379, -1.503963]}
     />
     <T.Mesh
-      name="Cylinder002"
-      geometry={$gltf.nodes.Cylinder002.geometry}
-      material={$gltf.materials.Brass}
+      name="Port001"
+      geometry={$gltf.nodes.Port001.geometry}
+      material={$gltf.materials['Metal.001']}
       position={[0.469201, 0.156996, -0.041707]}
       rotation={[0, 0.103374, -1.901089]}
     />
     <T.Mesh
-      name="Cube"
-      geometry={$gltf.nodes.Cube.geometry}
+      name="Accessory_-_side001"
+      geometry={$gltf.nodes['Accessory_-_side001'].geometry}
       material={$gltf.materials.Material}
       position={[0.836674, 0.318586, 0.044687]}
       rotation={[-0.327226, 0, 0]}
     />
     <T.Mesh
-      name="Cube001"
-      geometry={$gltf.nodes.Cube001.geometry}
-      material={$gltf.nodes.Cube001.material}
+      name="Accessory001"
+      geometry={$gltf.nodes.Accessory001.geometry}
+      material={$gltf.materials.Material}
       position={[0.272551, 0.088361, 0.102818]}
       rotation={[0, -0.088397, 0]}
     />
     <T.Mesh
-      name="Cylinder003"
-      geometry={$gltf.nodes.Cylinder003.geometry}
+      name="Partition001"
+      geometry={$gltf.nodes.Partition001.geometry}
       material={$gltf.materials.Black}
       position={[0, 0.005558, 0.04802]}
+    />
+    <T.Mesh
+      name="Helmet_-_metal001"
+      geometry={$gltf.nodes['Helmet_-_metal001'].geometry}
+      material={$gltf.materials['Metal.001']}
+      position={[0, 0.376172, 0]}
+      rotation={[0.49625, 0, 0]}
+    />
+    <T.Mesh
+      name="Coupling001"
+      geometry={$gltf.nodes.Coupling001.geometry}
+      material={$gltf.materials['Metal.001']}
+      position={[0, 0.005558, 0.04802]}
+      rotation={[-0.070662, 0, 0]}
     />
 
     <slot {ref} />
