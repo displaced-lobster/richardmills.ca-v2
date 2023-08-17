@@ -34,6 +34,11 @@
     @apply w-10 h-10;
     @apply hover:opacity-90;
     @apply transition-all duration-300;
+    transition: box-shadow 0.5s ease-in-out;
+  }
+
+  .button:hover {
+    box-shadow: inset 0 0 0 2em theme('colors.orange.800');
   }
 
   .button.with-hidden {
