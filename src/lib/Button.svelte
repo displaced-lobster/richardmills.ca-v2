@@ -28,15 +28,17 @@
 <style lang="postcss">
   .button {
     @apply inline-flex items-center justify-center;
-    @apply opacity-70;
-    @apply border border-slate-200 hover:bg-slate-800 rounded-full;
+    @apply opacity-60 bg-slate-800;
+    @apply border border-slate-200 rounded-full;
     @apply text-center text-slate-200 text-base;
     @apply w-10 h-10;
+    @apply hover:opacity-90;
+    @apply transition-all duration-300;
   }
 
   .button.with-hidden {
-    @apply w-10 hover:w-auto hover:px-3 h-10;
     @apply hover:rounded-s-none;
+    @apply hover:w-auto hover:px-3;
   }
 
   .btn-hidden {

@@ -49,6 +49,7 @@
     @apply text-slate-200;
     @apply overflow-hidden;
     @apply text-right;
+    @apply transition-all duration-300;
   }
 
   .list > li {
