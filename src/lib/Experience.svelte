@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { Canvas, OrbitControls, T } from '@threlte/core'
+  import { Canvas, T } from '@threlte/core'
+  import { OrbitControls } from '@threlte/extras'
   import AstronautHelmet from '$lib/AstronautHelmet.svelte'
   import Environment from '$lib/Environment.svelte'
   import HelmetInternal from '$lib/HelmetInternal.svelte'
@@ -21,7 +22,7 @@
         enableDamping
         enablePan={false}
         maxDistance={2}
-        target={{ y: 0.35 }}
+        target={[0, 0.35, 0]}
       />
     </T.PerspectiveCamera>
     <T.DirectionalLight castShadow position={[3, 10, 10]} />
