@@ -4,6 +4,7 @@
   import AstronautHelmet from '$lib/AstronautHelmet.svelte'
   import Environment from '$lib/Environment.svelte'
   import HelmetInternal from '$lib/HelmetInternal.svelte'
+  import Planet from '$lib/Planet.svelte'
 </script>
 
 <div class="h-full w-full">
@@ -13,7 +14,7 @@
       fov={75}
       aspect={2}
       near={0.05}
-      far={15}
+      far={1000}
       position={[0, 0.35, 1.2]}
     >
       <OrbitControls
@@ -25,11 +26,12 @@
         target={[0, 0.35, 0]}
       />
     </T.PerspectiveCamera>
-    <T.DirectionalLight castShadow position={[3, 10, 10]} />
+    <T.DirectionalLight castShadow position={[3, 10, 10]} intensity={10} />
     <T.DirectionalLight position={[-3, 10, -10]} intensity={0.2} />
     <T.AmbientLight intensity={0.2} />
     <AstronautHelmet />
     <HelmetInternal />
+    <Planet position={[400, 0, -600]} scale={300} />
     <Environment />
   </Canvas>
 </div>
