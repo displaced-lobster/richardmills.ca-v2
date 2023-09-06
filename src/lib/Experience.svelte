@@ -5,6 +5,8 @@
   import Environment from '$lib/Environment.svelte'
   import HelmetInternal from '$lib/HelmetInternal.svelte'
   import PlanetGroup from '$lib/PlanetGroup.svelte'
+
+  export let autoRotate = true
 </script>
 
 <div class="h-full w-full">
@@ -18,7 +20,7 @@
       position={[0, 0.35, 1.2]}
     >
       <OrbitControls
-        autoRotate
+        {autoRotate}
         autoRotateSpeed={0.5}
         enableDamping
         enablePan={false}
