@@ -17,7 +17,7 @@
     "@sveltejs/kit": "^2.15.1",
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
     "@threlte/gltf": "^2.0.3",
-    "@types/three": "^0.159.0",
+    "@types/three": "^0.171.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.17.0",
     "eslint-config-prettier": "^9.1.0",
@@ -41,6 +41,6 @@
     "@sveltejs/adapter-static": "^3.0.8",
     "@threlte/core": "^7.3.1",
     "@threlte/extras": "^8.12.0",
-    "three": "^0.159.0"
+    "three": "^0.171.0"
   }
 }
